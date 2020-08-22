@@ -414,14 +414,17 @@
          </property>
         </widget>
        </item>
-       <item row="4" column="0">
-        <widget class="QCheckBox" name="opSetupSheet">
-         <property name="text">
-          <string>Operator Setup Sheet</string>
-         </property>
-        </widget>
-       </item>
       </layout>
+     </widget>
+    </item>
+    <item row="3" column="0">
+     <widget class="QCheckBox" name="opSetupSheet">
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Will create an operator setupsheet if set to TRUE. The file will be saved as the Output File.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="text">
+       <string>Operator Setup Sheet</string>
+      </property>
      </widget>
     </item>
    </layout>
