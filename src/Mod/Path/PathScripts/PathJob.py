@@ -103,6 +103,7 @@ class ObjectJob:
         obj.addProperty("App::PropertyFile", "PostProcessorOutputFile", "Output", QtCore.QT_TRANSLATE_NOOP("PathJob", "The NC output file for this project"))
         obj.addProperty("App::PropertyEnumeration", "PostProcessor", "Output", QtCore.QT_TRANSLATE_NOOP("PathJob", "Select the Post Processor"))
         obj.addProperty("App::PropertyString", "PostProcessorArgs", "Output", QtCore.QT_TRANSLATE_NOOP("PathJob", "Arguments for the Post Processor (specific to the script)"))
+        obj.addProperty("App::PropertyBool", "OperatorSetupsheet", "Output", QtCore.QT_TRANSLATE_NOOP("PathJob", "Create an operator setupsheet"))
 
         obj.addProperty("App::PropertyString", "Description", "Path", QtCore.QT_TRANSLATE_NOOP("PathJob", "An optional description for this job"))
         obj.addProperty("App::PropertyString", "CycleTime", "Path", QtCore.QT_TRANSLATE_NOOP("PathOp", "Job Cycle Time Estimation"))

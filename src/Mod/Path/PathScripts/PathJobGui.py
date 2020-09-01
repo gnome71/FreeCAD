@@ -659,6 +659,7 @@ class TaskPanel:
             self.obj.PostProcessor = str(self.form.postProcessor.currentText())
             self.obj.PostProcessorArgs = str(self.form.postProcessorArguments.displayText())
             self.obj.PostProcessorOutputFile = str(self.form.postProcessorOutputFile.text())
+			self.obj.OperatorSetupsheet = self.form.opSetupSheet.isChecked()
 
             self.obj.Label = str(self.form.jobLabel.text())
             self.obj.Description = str(self.form.jobDescription.toPlainText())
@@ -757,6 +758,8 @@ class TaskPanel:
 
         if hasattr(self.obj, "SplitOutput"):
             self.form.splitOutput.setChecked(self.obj.SplitOutput)
+        if hasattr(self.obj, "OperatorSetupsheet"):
+            self.form.opSetupSheet.setChecked(self.obj.OperatorSetupsheet)
         if hasattr(self.obj, "OrderOutputBy"):
             self.selectComboBoxText(self.form.orderBy, self.obj.OrderOutputBy)
 
