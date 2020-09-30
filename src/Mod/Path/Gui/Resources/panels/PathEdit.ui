@@ -1015,8 +1015,8 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>561</width>
-         <height>684</height>
+         <width>232</width>
+         <height>324</height>
         </rect>
        </property>
        <attribute name="label">
@@ -1109,7 +1109,7 @@
             </widget>
            </item>
            <item row="1" column="3">
-            <widget class="Gui::QuantitySpinBox" name="setupClearanceHeightOffs" native="true">
+            <widget class="Gui::QuantitySpinBox" name="setupClearanceHeightOffs">
              <property name="toolTip">
               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ClearanceHeightOffset - can be used by expressions to set the default ClearanceHeight for new operations.&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;Default: &amp;quot;3 mm&amp;quot;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
@@ -1136,7 +1136,7 @@
             </widget>
            </item>
            <item row="3" column="3">
-            <widget class="Gui::QuantitySpinBox" name="setupSafeHeightOffs" native="true">
+            <widget class="Gui::QuantitySpinBox" name="setupSafeHeightOffs">
              <property name="toolTip">
               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;SafeHeightOffset can be for expressions to set the SafeHeight for new operations.&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;Default: &amp;quot;5 mm&amp;quot;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
@@ -1298,8 +1298,8 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>128</width>
-         <height>96</height>
+         <width>162</width>
+         <height>110</height>
         </rect>
        </property>
        <attribute name="label">
@@ -1323,7 +1323,7 @@
             </widget>
            </item>
            <item row="0" column="1">
-            <widget class="Gui::QuantitySpinBox" name="setupRapidHorizontal" native="true">
+            <widget class="Gui::QuantitySpinBox" name="setupRapidHorizontal">
              <property name="sizePolicy">
               <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
                <horstretch>0</horstretch>
@@ -1343,7 +1343,7 @@
             </widget>
            </item>
            <item row="1" column="1">
-            <widget class="Gui::QuantitySpinBox" name="setupRapidVertical" native="true">
+            <widget class="Gui::QuantitySpinBox" name="setupRapidVertical">
              <property name="sizePolicy">
               <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
                <horstretch>0</horstretch>
@@ -1528,14 +1528,14 @@
  </widget>
  <customwidgets>
   <customwidget>
+   <class>Gui::QuantitySpinBox</class>
+   <extends>QDoubleSpinBox</extends>
+   <header>gui_quantityspinbox.h</header>
+  </customwidget>
+  <customwidget>
    <class>Gui::InputField</class>
    <extends>QLineEdit</extends>
    <header>Gui/InputField.h</header>
-  </customwidget>
-  <customwidget>
-   <class>Gui::QuantitySpinBox</class>
-   <extends>QWidget</extends>
-   <header>Gui/QuantitySpinBox.h</header>
   </customwidget>
  </customwidgets>
  <tabstops>
