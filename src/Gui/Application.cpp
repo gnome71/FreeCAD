@@ -68,6 +68,7 @@
 #include "GuiApplication.h"
 #include "MainWindow.h"
 #include "Document.h"
+#include "DocumentPy.h"
 #include "View.h"
 #include "View3DPy.h"
 #include "WidgetFactory.h"
@@ -94,6 +95,7 @@
 #include "TransactionObject.h"
 #include "FileDialog.h"
 #include "ExpressionBindingPy.h"
+#include "ViewProviderLinkPy.h"
 
 #include "TextDocumentEditorView.h"
 #include "SplitView3DInventor.h"
@@ -196,6 +198,13 @@ FreeCADGui_subgraphFromObject(PyObject * /*self*/, PyObject *args)
             std::map<std::string, App::Property*> Map;
             obj->getPropertyMap(Map);
             vp->attach(obj);
+
+            // this is needed to initialize Python-based view providers
+            App::Property* pyproxy = vp->getPropertyByName("Proxy");
+            if (pyproxy && pyproxy->getTypeId() == App::PropertyPythonObject::getClassTypeId()) {
+                static_cast<App::PropertyPythonObject*>(pyproxy)->setValue(Py::Long(1));
+            }
+
             for (std::map<std::string, App::Property*>::iterator it = Map.begin(); it != Map.end(); ++it) {
                 vp->updateData(it->second);
             }
@@ -474,6 +483,10 @@ Application::Application(bool GUIenabled)
         Base::Interpreter().addType(&LinkViewPy::Type,module,"LinkView");
         Base::Interpreter().addType(&AxisOriginPy::Type,module,"AxisOrigin");
         Base::Interpreter().addType(&CommandPy::Type,module, "Command");
+        Base::Interpreter().addType(&DocumentPy::Type, module, "Document");
+        Base::Interpreter().addType(&ViewProviderPy::Type, module, "ViewProvider");
+        Base::Interpreter().addType(&ViewProviderDocumentObjectPy::Type, module, "ViewProviderDocumentObject");
+        Base::Interpreter().addType(&ViewProviderLinkPy::Type, module, "ViewProviderLink");
     }
 
     Base::PyGILStateLocker lock;
